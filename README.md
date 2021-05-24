@@ -1,16 +1,7 @@
 # form_adaptativo
 
-A new Flutter application.
+Aplicação para o aprendizado de Layouts Responsivos e Formularios
 
-## Getting Started
+<img src="https://user-images.githubusercontent.com/18319251/119306529-aeb5a200-bc40-11eb-8c19-cae7c7f77a51.png" width="425"/> <img src="https://user-images.githubusercontent.com/18319251/119306535-afe6cf00-bc40-11eb-93e4-7b2c844bf453.png" width="425"/> 
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
