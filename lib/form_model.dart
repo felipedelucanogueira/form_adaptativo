@@ -16,11 +16,13 @@ class FormModel{
   void saveUser(){
     if (name == null) return;
     if (surname == null) return;
-   internalStorage.saveUser(name!, surname!);
+   //internalStorage.saveUser(name!, surname!);
+   internalStorage.secureUser(name!, surname!);
 
   }
 
   Future<String> getFullName(){
-    return internalStorage.getUserFullName();
+  //  return internalStorage.getUserFullName();
+    return internalStorage.getSecureFullName();
   }
 }
