@@ -3,7 +3,7 @@ import 'package:form_adaptativo/secure_storage_adapter.dart';
 import 'package:form_adaptativo/shared_preferences_adapter.dart';
 
 class FormModel{
-  String? name;
+  String? name ;
   String? surname;
 
   // set setName(String valor){
@@ -19,6 +19,15 @@ class FormModel{
     if (surname == null) return;
 
     internalStorage.saveUser(name!, surname!);
+
+
+  }
+
+  void fecthName() async{
+      name = await internalStorage.getName();
+     surname = await internalStorage.getSurname();
+
+
   }
 
   Future<String> getFullName(){

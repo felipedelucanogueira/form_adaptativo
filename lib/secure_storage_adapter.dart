@@ -6,6 +6,7 @@ class SecureStorageAdapter extends InternalStorageAdapter{
   final FlutterSecureStorage secureStorage = FlutterSecureStorage();
 
 
+
   void saveUser(String name , String surname) async{
     await secureStorage.write(key: 'name', value: name);
     await secureStorage.write(key: 'surname', value: surname);
@@ -21,5 +22,17 @@ class SecureStorageAdapter extends InternalStorageAdapter{
     }else{
       return 'Dados não Seguros';
     }
+  }
+
+  @override
+  Future<String?> getName() async {
+    final result = await secureStorage.read(key: 'name') ?? '';
+    return result;
+  }
+
+  @override
+  Future<String?> getSurname() async {
+    final result = await secureStorage.read(key: 'surname') ?? '';
+    return result;
   }
 }
