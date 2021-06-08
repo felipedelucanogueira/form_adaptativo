@@ -4,18 +4,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 class SharedPreferencesAdapter extends InternalStorageAdapter {
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
-  void saveUser(String name, String surname) async {
+  Future<void> saveUser(String name, String surname) async {
     final internalPref = await _prefs;
     internalPref.setString('name', name);
     internalPref.setString('surname', surname);
-    print('Dados Salvos');
+    print('Dados Seguros');
   }
 
-
   Future<String> getFullName() async {
-    final internalPref = await _prefs;
     final String? name = await getName();
-    final  String? surname = await getSurname();
+    final String? surname = await getSurname();
 
     if ((name != null) && (surname != null)) {
       return name + ' ' + surname;
@@ -26,7 +24,7 @@ class SharedPreferencesAdapter extends InternalStorageAdapter {
 
   Future<String?> getName() async {
     final internalPref = await _prefs;
-    return internalPref.getString('name') ?? '';
+    return internalPref.getString('name');
   }
 
   Future<String?> getSurname() async {
