@@ -23,4 +23,9 @@ class SharedPreferencesAdapter extends InternalStorageAdapter {
       return 'Usuário nao Salvo';
     }
   }
+
+  @override
+  void deleteUser(String name, String surname) {
+    // TODO: implement deleteUser
+  }
 }

@@ -1,6 +1,7 @@
 
 
 import 'package:form_adaptativo/form_model.dart';
+import 'package:form_adaptativo/user.dart';
 
 class FormController{
   final model = FormModel();
@@ -27,4 +28,8 @@ void onChangeSurname(String surname){
     model.saveUser();
 
   }
+  void deleteUser(){
+    model.deleteUser();
+  }
+
 }

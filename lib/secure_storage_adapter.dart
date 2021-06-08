@@ -22,4 +22,9 @@ class SecureStorageAdapter extends InternalStorageAdapter{
       return 'Dados não Seguros';
     }
   }
+
+  @override
+  void deleteUser(String name, String surname) {
+    // TODO: implement deleteUser
+  }
 }
