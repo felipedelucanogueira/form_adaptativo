@@ -31,4 +31,9 @@ class SharedPreferencesAdapter extends InternalStorageAdapter {
     final internalPref = await _prefs;
     return internalPref.getString('surname') ?? '';
   }
+
+  @override
+  void deleteUser(String name, String surname) {
+    // TODO: implement deleteUser
+  }
 }

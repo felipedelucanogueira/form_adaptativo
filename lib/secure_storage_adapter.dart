@@ -32,4 +32,9 @@ class SecureStorageAdapter extends InternalStorageAdapter {
     final result = await secureStorage.read(key: 'surname') ?? '';
     return result;
   }
+
+  @override
+  void deleteUser(String name, String surname) {
+    // TODO: implement deleteUser
+  }
 }

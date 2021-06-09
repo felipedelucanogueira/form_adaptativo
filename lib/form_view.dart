@@ -18,7 +18,7 @@ class _FormViewState extends State<FormView> {
   final surnameController = TextEditingController();
 
   // Aq eu uso StreamSubscription para poder fechar o listne
-  StreamSubscription<FormModel> _streamSubscription;
+  late StreamSubscription<FormModel> _streamSubscription;
 
   @override
   void dispose() {
