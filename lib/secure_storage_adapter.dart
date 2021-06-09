@@ -1,26 +1,36 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:form_adaptativo/internal_storage.dart';
 
-
-class SecureStorageAdapter extends InternalStorageAdapter{
+class SecureStorageAdapter extends InternalStorageAdapter {
   final FlutterSecureStorage secureStorage = FlutterSecureStorage();
 
-
-  void saveUser(String name , String surname) async{
+  Future<void> saveUser(String name, String surname) async {
     await secureStorage.write(key: 'name', value: name);
     await secureStorage.write(key: 'surname', value: surname);
     print('Dados Seguros');
   }
 
-  Future <String> getFullName() async{
+  Future<String> getFullName() async {
     String? name = await secureStorage.read(key: 'name');
     String? surname = await secureStorage.read(key: 'surname');
 
-    if((name != null) && (surname != null)){
+    if ((name != null) && (surname != null)) {
       return name + ' ' + surname;
-    }else{
+    } else {
       return 'Dados não Seguros';
     }
+  }
+
+  @override
+  Future<String?> getName() async {
+    final result = await secureStorage.read(key: 'name') ?? '';
+    return result;
+  }
+
+  @override
+  Future<String?> getSurname() async {
+    final result = await secureStorage.read(key: 'surname') ?? '';
+    return result;
   }
 
   @override
